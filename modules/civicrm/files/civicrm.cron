@@ -1,0 +1,3 @@
+MAILTO="myyalniz@gmail.com"
+*/10 * * * *    www-data    drush -r /usr/share/nginx/html -l https://www.cc2016test.com -u 1 civicrm-api job.execute auth=0 --out=json
+

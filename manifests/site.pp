@@ -185,6 +185,16 @@ class mysql_ini {
 
 }
 
+class civicrm_cron {
+   file { '/etc/cron.d/civicrm.cron':
+     path         => '/etc/cron.d/civicrm.cron',
+     ensure       => present,
+     source       => ['puppet:///modules/civicrm/civicrm.cron'],
+     require      => File['/opt/civicrm'],
+   }
+
+}
+
 node 'ip-172-31-28-212' {
 	include nginx_repo 
 	include php5_repo 
@@ -195,6 +205,7 @@ node 'ip-172-31-28-212' {
 	include nginx_config
 	include memory_limit
 	include mysql_ini
+	include civicrm_cron
 }
 
 node default {
