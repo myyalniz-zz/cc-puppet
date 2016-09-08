@@ -17,6 +17,8 @@ export AWS_REGION=us-east-1
 Then
 <br>
 
+cd /etc/puppet/
+<br>
 puppet apply manifests/civicrm_instance.pp
 <br>
 
